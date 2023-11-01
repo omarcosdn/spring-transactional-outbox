@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: 'SpringTransactionalOutboxPatternService'
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pg_outbox
+    username: 'postgres'
+    password: 'password'
+  jpa:
+    hibernate:
+      ddl-auto: none
