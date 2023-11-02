@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 
 public interface OutboxRepository extends JpaRepository<OutboxJpaEntity, UUID> {
 
-  @Query(value = "SELECT * FROM outbox WHERE status = :status ORDER BY occurred_on ASC LIMIT 10 FOR UPDATE SKIP LOCKED", nativeQuery = true)
+  @Query(value = "SELECT * FROM outbox WHERE status = :status ORDER BY created_at ASC LIMIT 10 FOR UPDATE SKIP LOCKED", nativeQuery = true)
   List<OutboxJpaEntity> findTopTenMessagesByStatus(@Param("status") String status);
 }
